@@ -1,5 +1,6 @@
 # 2024 Notice
 - HW1 체커를 추가했습니다.
+- HW2 체커를 추가했습니다.
 
 # pl-checker
 2024년 봄학기 Programming Language 숙제 자동 채점기 <br>
