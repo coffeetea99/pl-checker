@@ -1,37 +1,11 @@
 # HW3: K- interpreter
 ## How to use
-### 3-1
 1. 구현한 `k.ml`을 복사하거나 뼈대코드`k.ml.orig`을 `k.ml`로 바꾼 후 구현합니다.
 2. `./check` 명령어를 통해 테스트케이스를 실행합니다.
 
 - `examples/test<num>.k-` : 테스트케이스
 - `examples/test<num>.ans` : 정답
 - `examples/test<num>.out` : 출력
-
-### 3-2, 3-3
-1. `exercises/` 폴더에 `ex2.txt`, `ex3.txt` 또는 `ex2.k-`, `ex3.k-` 파일을 작성합니다.
-2. `./check` 명령어를 통해 테스트케이스를 실행합니다.
-
-제출스펙과 마찬가지로 소스코드 마지막을
-3-2는
-```
-...
-in
-let input := 0 in
-read input;
-write (numch(input))
-```
-3-3은
-```
-...
-in
-2017
-```
-로 끝내주시기 바랍니다.
-
-- `exercises/test<ex>-<num>.k-` : 테스트케이스
-- `exercises/test<ex>-<num>.ans` : 정답
-- `exercises/test<ex>-<num>.out` : 출력
 
 ---
 

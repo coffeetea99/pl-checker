@@ -1,6 +1,0 @@
-(
-let tree := leaf (123) in
-( dft(tree);
-  bft(tree)
-)
-)
