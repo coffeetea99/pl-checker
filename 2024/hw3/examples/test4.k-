@@ -1,8 +1,8 @@
-(* Public test case 4 : scope & call by value *)
+(* Public test case 4 : return value of write() *)
 
-let x:=1 in
-let proc inc(n) = x := x + n in
-let x:=0 in
-(inc (1); write x)
+if (write (1)) = 1 then
+  write 100
+else
+  write 200
 
-(* Output : prints out "0\n" *)
+(* Output : prints out "1\n100\n" *)

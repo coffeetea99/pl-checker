@@ -3,7 +3,6 @@
  *  K-- Interpreter
  *)
 
-open K__
 open Pp
 open K
 
