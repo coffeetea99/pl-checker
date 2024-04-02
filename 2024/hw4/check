@@ -106,7 +106,7 @@ do
         SRC="${EXDIR}/ex3.k-"
     fi
 
-    sed -e "/2017/ r ${TFILE}.k-" -e "s/2017//" "${SRC}" > "${TFILE}.tmp.k-"
+    sed -e "/2024/ r ${TFILE}.k-" -e "s/2024//" "${SRC}" > "${TFILE}.tmp.k-"
 
     COMM="./run ${TFILE}.tmp.k- > ${TFILE}.out"
 
