@@ -124,3 +124,26 @@ dune exec --release k_ examples/test1.k-
 ## 주석
 
 K- 프로그램 안에서 `(*  *)`로 주석을 사용할 수 있습니다.
+
+--
+
+03 최웅식 <wschoi@ropas.kaist.ac.kr>
+04 신재호 <netj@ropas.snu.ac.kr>
+05 김덕환 <dk@ropas.snu.ac.kr>
+05 오학주 <pronto@ropas.snu.ac.kr>
+06 이희종 <ihji@ropas.snu.ac.kr>
+07 오학주 <pronto@ropas.snu.ac.kr>
+08 최원태 <wtchoi@ropas.snu.ac.kr>
+09 허기홍 <khheo@ropas.snu.ac.kr>
+09 김희정 <hjkim@ropas.snu.ac.kr>
+10 조성근 <skcho@ropas.snu.ac.kr>
+10 장수원 <swjang@ropas.snu.ac.kr>
+11 윤용호 <yhyoon@ropas.snu.ac.kr>
+11 김진영 <jykim@ropas.snu.ac.kr>
+13 최준원 <jwchoi@ropas.snu.ac.kr>
+13 강동옥 <dokang@ropas.snu.ac.kr>
+15 최재승 <jschoi@ropas.snu.ac.kr>
+17 이동권 <dklee@ropas.snu.ac.kr>
+18 배요한 <yhbae@ropas.snu.ac.kr>"
+21 김세훈 <shkim@ropas.snu.ac.kr>"
+24 이재호 <jhlee@ropas.snu.ac.kr>"
