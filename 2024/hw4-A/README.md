@@ -1,4 +1,4 @@
-# HW4: K- interpreter
+# HW4-A: K- interpreter
 ## How to use
 ### 4-1
 1. 구현한 `k.ml`을 복사하거나 뼈대코드`k.ml.orig`을 `k.ml`로 바꾼 후 구현합니다.
