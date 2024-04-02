@@ -1,0 +1,20 @@
+#!/bin/bash
+HWNUM=4
+EXERCISES=(4)
+LIB_PATH="../lib/"
+LIBSRC="testlib.ml"
+
+function check {
+    echo "# Exercise ${1}"
+    ocamlc -I "${LIB_PATH}" -o ex"${EX}".out ${LIB_PATH}${LIBSRC} ex"${EX}".ml test"${EX}".ml \
+        && ./ex"${EX}".out ${2}
+}
+
+if [[ $# -eq 0 ]]
+then
+    for EX in "${EXERCISES[@]}"; do
+        check "${EX}"
+    done
+else
+    echo "Error: Too many arguments"
+fi
