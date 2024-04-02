@@ -1,8 +1,8 @@
-(* Exercise 3. getReady *)
-open Ex3
+(* Exercise 4. getReady *)
+open Ex4
 open Testlib
 
-module TestEx3: TestEx =
+module TestEx4: TestEx =
   struct
     type testcase =
       | GETREADY of map * key list
@@ -125,5 +125,5 @@ module TestEx3: TestEx =
           )
   end
 
-open TestEx3
+open TestEx4
 let _ = wrapper testcases runner string_of_tc
