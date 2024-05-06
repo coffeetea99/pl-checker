@@ -1,5 +1,5 @@
-translate.ml
-sm5.ml
+translator.ml
+machine.ml
 run
 parser.ml
 parser.mli

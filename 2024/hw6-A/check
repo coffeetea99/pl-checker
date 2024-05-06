@@ -54,7 +54,7 @@ done
 
 echo ''
 echo '# Compiling gc test...'
-if ! ocamlc unix.cma -I ../lib/ ../lib/testlib.ml sm5.ml gc_test.ml -o gc
+if ! ocamlc unix.cma -I ../lib/ ../lib/testlib.ml machine.ml gc_test.ml -o gc
 then
     echo ''
     echo 'Compile fail.'

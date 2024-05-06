@@ -1,21 +1,21 @@
 all: run
 
-run: lexer.cmo parser.cmo sm5.cmo k.cmo translate.cmo pp.cmo main.cmo
-	ocamlc -o run lexer.cmo pp.cmo parser.cmo sm5.cmo translate.cmo k.cmo main.cmo
+run: lexer.cmo parser.cmo machine.cmo k.cmo translator.cmo pp.cmo main.cmo
+	ocamlc -o run lexer.cmo pp.cmo parser.cmo machine.cmo translator.cmo k.cmo main.cmo
 
 k.cmo : k.ml
 	ocamlc -c k.ml
 
-sm5.cmo : sm5.ml
-	ocamlc -c sm5.ml
+machine.cmo : machine.ml
+	ocamlc -c machine.ml
 
-translate.cmo : translate.ml k.cmo sm5.cmo
-	ocamlc -c translate.ml
+translator.cmo : translator.ml k.cmo machine.cmo
+	ocamlc -c translator.ml
 
-pp.cmo : pp.ml translate.cmo
+pp.cmo : pp.ml translator.cmo
 	ocamlc -c pp.ml
 
-parser.ml: parser.mly translate.cmo
+parser.ml: parser.mly translator.cmo
 	ocamlyacc parser.mly
 
 parser.mli: parser.mly
@@ -27,7 +27,7 @@ parser.cmi: parser.mli
 parser.cmo: parser.ml parser.cmi
 	ocamlc -c parser.ml
 
-main.cmo : translate.cmo main.ml
+main.cmo : translator.cmo main.ml
 	ocamlc -c main.ml
 
 lexer.cmo: lexer.ml
