@@ -1,5 +1,5 @@
 open Testlib
-open Sm5.Sm5
+open Machine
 
 (* Set the Sm5.gc_mode flag *)
 
@@ -564,7 +564,7 @@ let testcases : testcase list =
 
 let print_to_fd fd str =
   let out_chan = Unix.out_channel_of_descr fd in
-  let _ = output out_chan (str^"\n") 0 ((String.length str) + 1) in
+  let _ = output out_chan (Bytes.of_string (str^"\n")) 0 ((String.length str) + 1) in
   let _ = flush out_chan in
   ()
 
