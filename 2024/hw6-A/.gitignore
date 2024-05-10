@@ -1,0 +1,11 @@
+translator.ml
+machine.ml
+run
+parser.ml
+parser.mli
+lexer.ml
+*.out
+*.k--
+!examples/*.k--
+*.txt
+gc
