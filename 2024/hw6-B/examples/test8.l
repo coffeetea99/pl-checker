@@ -13,4 +13,4 @@ let i' = \m.m (\n.f') t' in
 let y'' = \f.((\x. f (x x))(\x. f (x x))) in
 let f'' = \f.\n. (((i' n) (p' z')) (x' n (f (m' n)))) in
 
-y'' f'' (p' (p' (p' (p' z'))))
+y'' f'' (p' (p' (p' z')))
