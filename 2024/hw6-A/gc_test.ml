@@ -562,13 +562,6 @@ let testcases : testcase list =
   ]
 
 
-let print_to_fd fd str =
-  let out_chan = Unix.out_channel_of_descr fd in
-  let _ = output out_chan (Bytes.of_string (str^"\n")) 0 ((String.length str) + 1) in
-  let _ = flush out_chan in
-  ()
-
-
 let run_in_string cmd =
   (* Redirect standard output *)
   let save_stdout = Unix.dup Unix.stdout in
