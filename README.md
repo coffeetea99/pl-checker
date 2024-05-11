@@ -37,6 +37,7 @@ git pull --rebase origin master
 - [kipa00](https://github.com/kipa00)
 - [kjp4155](https://github.com/kjp4155)
 - [Leeingnyo](https://github.com/Leeingnyo)
+- [sanggggg](https://github.com/sanggggg)
 - All students sharing testcases
 - All TAs in PL lecture
 
