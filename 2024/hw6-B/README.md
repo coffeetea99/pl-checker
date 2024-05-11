@@ -1,7 +1,7 @@
 # HW6: Normal-order reduction evaluator
 ## How to use
 1. 구현한 `evaluator.ml`을 복사하거나 뼈대코드 `evaluator.ml.orig`을 `evaluator.ml`로 바꾼 후 구현합니다.
-3. `./check` 명령어를 통해 테스트케이스를 실행합니다.
+2. `./check` 명령어를 통해 테스트케이스를 실행합니다.
 
 - `examples/testgc<num>.l` : 테스트케이스
 - `examples/testgc<num>.ans` : 정답
@@ -30,3 +30,7 @@
 ## 숙제 제출 방법
 
 `evaluator.ml` 파일에 있는 `reduce` 함수를 완성하시고 그 파일만 제출해 주세요.
+
+---
+이재호 <jhlee@ropas.snu.ac.kr>
+박규연 <kypark@ropas.snu.ac.kr>
