@@ -1,0 +1,9 @@
+evaluator.ml
+run
+parser.ml
+parser.mli
+lexer.ml
+*.out
+*.l
+!examples/*.l
+*.txt
