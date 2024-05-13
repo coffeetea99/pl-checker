@@ -1,5 +1,6 @@
 evaluator.ml
 run
+comparer
 parser.ml
 parser.mli
 lexer.ml

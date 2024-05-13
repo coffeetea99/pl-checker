@@ -18,6 +18,7 @@ let _ = List.iter (fun (keyword, tok) -> Hashtbl.add keyword_tbl keyword tok)
 
 let blank = [' ' '\n' '\t' '\r']+
 let id = ['a'-'z' 'A'-'Z']['\'']*
+let numid = '#'['0'-'9']*
 
 rule start = parse
   | blank { start lexbuf }
@@ -27,6 +28,10 @@ rule start = parse
   | "let" {verbose2 "let"; LET}
   | "in" {verbose2 "in"; IN}
   | id { let id = verbose1 (Lexing.lexeme lexbuf)
+         in try Hashtbl.find keyword_tbl id
+            with _ -> ID id
+         }
+  | numid { let id = verbose1 (Lexing.lexeme lexbuf)
          in try Hashtbl.find keyword_tbl id
             with _ -> ID id
          }

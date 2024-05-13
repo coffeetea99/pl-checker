@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TESTCASES=(1 2 3 4 5 6 7 8)
+TESTCASES=(9 10)
 TESTDIR="examples"
 WRONG="$(tput setaf 1)✗$(tput sgr0)"
 CORRECT="$(tput setaf 2)✓$(tput sgr0)"
@@ -8,11 +8,11 @@ WARNING="$(tput setaf 3)⚠$(tput sgr0)"
 
 
 function result {
-    if [ 0 -lt "$1"  ]
+    if [ "Same" = "$1"  ]
     then
-        echo "${WRONG}"
-    else
         echo "${CORRECT}"
+    else
+        echo "${WRONG}"
     fi
 }
 
@@ -37,8 +37,7 @@ do
 
     if eval "${COMM}"
     then
-        eval "diff ${TFILE}.ans ${TFILE}.out > /dev/null"
-        result $?
+        result $(eval "./comparer ${TFILE}.ans ${TFILE}.out")
     else
         echo "${WRONG}"
     fi
