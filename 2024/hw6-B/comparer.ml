@@ -18,23 +18,23 @@ let str2pgm str =
   let lexbuf = Lexing.from_string str in
   inline (Parser.program Lexer.start lexbuf)
 
-let rec free_vars_mapping : Lexp.t -> string list = function
+let rec free_vars_ordered: Lexp.t -> string list = function
   | Var x -> [ x ]
-  | Lam (x, e) -> List.filter (fun i -> i != x) (free_vars_mapping e)
+  | Lam (x, e) -> List.filter (fun i -> i != x) (free_vars_ordered e)
   | App (e1, e2) ->
-      let fv1 = free_vars_mapping e1 in
+      let fv1 = free_vars_ordered e1 in
       let fv2 =
         List.fold_right
           (fun x acc -> List.filter (fun i -> i != x) acc)
-          fv1 (free_vars_mapping e2)
+          fv1 (free_vars_ordered e2)
       in
       fv1 @ fv2
 
 let is_same file1 file2 =
   let pgm1 = str2pgm (file2string file1) in
   let pgm2 = str2pgm (file2string file2) in
-  let free_vars1 = free_vars_mapping pgm1 in
-  let free_vars2 = free_vars_mapping pgm2 in
+  let free_vars1 = free_vars_ordered pgm1 in
+  let free_vars2 = free_vars_ordered pgm2 in
   let pgm1 = List.fold_right (fun x acc -> Lexp.Lam (x, acc)) free_vars1 pgm1 in
   let pgm2 = List.fold_right (fun x acc -> Lexp.Lam (x, acc)) free_vars2 pgm2 in
   let rec is_same' (pgm1 : Lexp.t) (pgm2 : Lexp.t) =
