@@ -1,4 +1,4 @@
-all: run
+all: run comparer
 
 run: lexer.cmo parser.cmo evaluator.cmo lexp.cmo pp.cmo main.cmo
 	ocamlc -o run lexer.cmo pp.cmo parser.cmo evaluator.cmo lexp.cmo main.cmo
