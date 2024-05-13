@@ -1,7 +1,10 @@
-all: run
+all: run comparer
 
 run: lexer.cmo parser.cmo evaluator.cmo lexp.cmo pp.cmo main.cmo
 	ocamlc -o run lexer.cmo pp.cmo parser.cmo evaluator.cmo lexp.cmo main.cmo
+
+comparer: lexer.cmo parser.cmo evaluator.cmo lexp.cmo pp.cmo comparer.cmo
+	ocamlc -o comparer lexer.cmo pp.cmo parser.cmo evaluator.cmo lexp.cmo comparer.cmo
 
 lexp.cmo : lexp.ml
 	ocamlc -c lexp.ml
@@ -27,6 +30,9 @@ parser.cmo: parser.ml parser.cmi
 main.cmo : evaluator.cmo main.ml
 	ocamlc -c main.ml
 
+comparer.cmo : evaluator.cmo comparer.ml
+	ocamlc -c comparer.ml
+
 lexer.cmo: lexer.ml
 	ocamlc -c lexer.ml
 
@@ -34,4 +40,4 @@ lexer.ml: lexer.mll parser.cmo
 	ocamllex lexer.mll
 
 clean:
-	rm -f *.cmx *.cmi parser.mli parser.ml lexer.ml run *.o *.cmo stdout_redirect.txt
+	rm -f *.cmx *.cmi parser.mli parser.ml lexer.ml run comparer *.o *.cmo stdout_redirect.txt
