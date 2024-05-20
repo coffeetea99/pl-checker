@@ -2,8 +2,8 @@
 
 ## How to use
 
-1. 구현한 `translate.ml`을 복사하거나 뼈대코드 `translate.ml.orig`을 `translate.ml`로 바꾼 후 구현합니다.
-2. 구현한 `sm5.ml`을 복사하거나 뼈대코드 `sm5.ml.orig`을 `sm5.ml`로 바꾼 후 구현합니다.
+1. 구현한 `translator.ml`을 복사하거나 뼈대코드 `translator.ml.orig`을 `translator.ml`로 바꾼 후 구현합니다.
+2. 구현한 `machine.ml`을 복사하거나 뼈대코드 `machine.ml.orig`을 `machine.ml`로 바꾼 후 구현합니다.
 3. `./check` 명령어를 통해 테스트케이스를 실행합니다.
 
 ## Test Cases
