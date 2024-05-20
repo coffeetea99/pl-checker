@@ -5,4 +5,4 @@
 
 open M0
 
-val cps : mexp -> mexp
+val cps : nexp -> nexp
