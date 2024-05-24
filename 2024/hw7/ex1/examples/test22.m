@@ -1,14 +1,14 @@
 (* 22. recursion with pair *)
 
 (rec f x =>
-  ifzero (x + (-1)) then
-    1
-  else (
+  ifp (x + (-1)) then (
     (rec g y =>
-      (ifzero y.2 then
-        0
+      (ifp y.2 then
+        ((g (y.1, (y.2 + (-1)))) + (y.1))
       else
-        ((g (y.1, (y.2 + (-1)))) + (y.1)))
+        0)
     ) (x, f (x + (-1)))
   )
+  else 
+    1
 ) 3

@@ -19,7 +19,7 @@ let rec check_cps cps_pgm =
     | M0.Fst (M0.Var _)
     | M0.Snd (M0.Var _) -> true
     | M0.Fn (_, e)
-    | M0.Rec (_, _, e) -> check_cps e
+    | M0.Fnr (_, _, e) -> check_cps e
     | _ -> false
   in
   let rec check_cps' exp k =
@@ -27,7 +27,7 @@ let rec check_cps cps_pgm =
     | M0.App (M0.Var v1, e2) when v1 = k -> check_const e2
     | M0.App (e1, M0.Var v2) when v2 = k -> check_const e1 || check_cps e1
     | M0.App (e1, M0.Fn (v, e2)) -> check_cps e1 && check_cps' e2 k
-    | M0.Ifz (M0.Var v1, e2, e3) -> check_cps' e2 k && check_cps' e3 k
+    | M0.Ifp (M0.Var v1, e2, e3) -> check_cps' e2 k && check_cps' e3 k
     | _ -> false
   in
   match cps_pgm with

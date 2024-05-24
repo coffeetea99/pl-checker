@@ -1,5 +1,5 @@
-(* Public testcase 4 : ifzero *)
+(* Public testcase 4 : ifp *)
 
-ifzero ((fn b => b + 1) 0) then 1 else 2
+ifp ((fn b => b + 1) 0) then 1 else 2
 
-(* Output : 2 *)
+(* Output : 1 *)
