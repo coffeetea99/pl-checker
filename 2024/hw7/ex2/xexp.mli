@@ -1,29 +1,26 @@
 (*
- * SNU 4190.310 Programming Languages 
- * Xexp Language Definition and Interpreter
+ * SNU 4190.310 Programming Languages
+ * M0 Language Definition and Interpreter
  *)
 
-type xexp = 
+type xexp =
   | Num of int
-  | Var of string
-  | Fn of string * xexp
+  | Var of id
+  | Fn of id * xexp
+  | Fnr of id * id * xexp
   | App of xexp * xexp
-  | If of xexp * xexp * xexp
-  | Equal of xexp * xexp
+  | Ifp of xexp * xexp * xexp
+  | Add of xexp * xexp
+  | Pair of xexp * xexp (* (e, e) *)
+  | Fst of xexp (*   e.1  *)
+  | Snd of xexp (*   e.2  *)
   | Raise of xexp
-  | Handle of xexp * int * xexp
+  | Handle of xexp * string * xexp
+
+and id = string
 
 type closure
-type value =
-  | N of int
-  | B of bool
-  | C of closure
+type value = N of int | P of value * value | C of closure
 
-type result = 
-  | Val of value  (* Value *)
-  | Exn of int    (* Exception *)
-
-val run : xexp -> result
+val run : xexp -> value
 val print : xexp -> unit
-val is_sugarless : xexp -> bool
-

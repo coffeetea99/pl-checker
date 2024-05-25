@@ -1,7 +1,7 @@
 (*
  * SNU 4190.310 Programming Languages 
  *
- * Lexer of xexp for Homework "Exceptions are sugar"
+ * Lexer for Xexp
  *)
 
 {
@@ -12,24 +12,23 @@
  let comment_depth = ref 0
  let keyword_tbl = Hashtbl.create 31
  let _ = List.iter (fun (keyword, tok) -> Hashtbl.add keyword_tbl keyword tok)
-                   [("if", IF);
+                   [("ifp", IF);
                     ("then",THEN);
                     ("else",ELSE);
                     ("fn", FN);
+                    ("rec" , REC);
                     ("raise", RAISE);
                     ("handle", HANDLE);
-                    ("let", LET);
-                    ("in", IN);
                   ]
  let s2int = function "" -> raise (Lex_err("illegal number token"))
            | s -> if ('~' = String.get s 0) then
                    - (int_of_string(String.sub s 1 ((String.length s)-1)))
                    else int_of_string s
-} 
+}
 
 let blank = [' ' '\t' '\r' '\n']+
 let id = ['a'-'z' 'A'-'Z'](['a'-'z' 'A'-'Z' '\'' '0'-'9' '_'])*
-let number = ['0'-'9']+|'~'['0'-'9']+
+let number = '-'?['0'-'9']+
 
 rule start =
 parse blank { start lexbuf }
@@ -45,10 +44,12 @@ parse blank { start lexbuf }
              comment lexbuf;
              start lexbuf }
     | "=>" { verbose "=>"; RARROW}
+    | "+" {verbose "+"; PLUS}
+    | "-" {verbose "-"; MINUS}
+    | "." {verbose "."; DOT}
     | "(" { verbose "("; LP}
     | ")" { verbose ")"; RP}
-    | "=" { verbose "="; EQ}
-    | "-" { verbose "-"; MINUS}
+    | "," {verbose ","; COMMA}
     | _ {raise (Lex_err("illical token "^(Lexing.lexeme lexbuf)))} 
 
 and comment = parse

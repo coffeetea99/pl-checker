@@ -1,9 +1,13 @@
-(* Public testcase 8 : Exception handler that raises exception *)
+(* Public testcase8 : Environment must be preserved *)
 
-let fail = fn n => (fn i => i) (raise n) in
-let f = (fn a => (fail a) handle 10 (fail 0)) in
-let g = (fn b => (fail b) handle 20 (fail 1)) in
-let h = (fn x => (f x) handle 0 (g 20)) in
-(h 10) handle 2 33
+(fn x => 
+  (fn y => 
+    (ifp y then 
+      (fn x => raise 7) 65
+    else
+      1
+    ) handle a (x + a)
+  ) 75
+) 85
 
-(* Output : Unhandled Exception #1 *)
+(* Output : 92 *)

@@ -1,8 +1,11 @@
 *.ml
-*.mli
-run
-!main.ml
-!parser.mly
-!xexp.mli
-!lexer.mll
+!cps.orig.ml
+cps.ml
 !xexp.ml
+!xexp.mli
+!main.ml
+!lexer.mll
+!parser.mly
+parser.ml
+parser.mli
+run

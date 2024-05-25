@@ -1,14 +1,14 @@
 all: run
 
-run: lexer.cmo parser.cmo xexp.cmo desugar.cmo main.cmo
-	ocamlc -o run xexp.cmo lexer.cmo parser.cmo desugar.cmo main.cmo
+run: lexer.cmo parser.cmo xexp.cmo cps.cmo main.cmo
+	ocamlc -o run xexp.cmo lexer.cmo parser.cmo cps.cmo main.cmo
 
 xexp.cmo : xexp.ml xexp.mli
 	ocamlc -c xexp.mli
 	ocamlc -c xexp.ml
 
-desugar.cmo : desugar.ml xexp.cmo
-	ocamlc -c desugar.ml
+cps.cmo : cps.ml xexp.cmo
+	ocamlc -c cps.ml
 
 parser.ml: parser.mly xexp.cmo 
 	ocamlyacc parser.mly
@@ -22,7 +22,7 @@ parser.cmi: parser.mli
 parser.cmo: parser.ml parser.cmi
 	ocamlc -c parser.ml
 
-main.cmo : main.ml xexp.cmo desugar.cmo parser.cmo
+main.cmo : main.ml xexp.cmo cps.cmo parser.cmo
 	ocamlc -c main.ml
 
 lexer.cmo: lexer.ml

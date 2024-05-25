@@ -1,27 +1,5 @@
-(* Public testcase 4 : Pair simulation : exception properly handled *)
+(* Public testcase 4 : Two subexpressions both raising exceptions. *)
 
-let pair = 
-  (fn x => 
-    (fn y => 
-      (fn i => 
-        if i = 1 then 
-          x 
-        else if i = 2 then
-          y
-        else
-          raise 0
-      )
-    )
-  ) 
-in
-let fst = (fn p => p 1) in
-let snd = (fn p => p 2) in
-let third = (fn p => p 3) in (* Error *)
-let f = 
-  (fn p => 
-    (third (fst p)) handle 1 10
-  ) 
-in
-(f (pair (pair 1 2) (pair 2 3))) handle 0 20
+(ifp (raise 10) + (raise 30) then 2 else 1) handle a a
 
-(* Output : 20 *)
+(* Output : 10 *)
