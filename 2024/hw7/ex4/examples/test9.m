@@ -1,12 +1,62 @@
-(* Polymorphic toy 2 *)
+(* sorting algorithm *)
 
-let val I = fn x => x
-    val fst = fn x => x.1
-    val const = fn n => 10
+let 
+  val data = (1,(400,(29,1)))
+  val bg = fn a => fn b => 
+    let rec comp = fn a => fn b => fn delta =>
+          if (a+delta) = b then false
+          else if (a-delta) = b then true
+          else comp a b (delta+1)
+    in
+        if a = b then false
+        else comp a b 1
+    end 
+  val sort2 = fn x => 
+    let val a = x.1 
+        val b = x.2
+    in
+        if (bg a b) then (a,b) else (b,a)
+    end
+  val sort3 = fn x => 
+    let val a = x.1 
+        val b = sort2 (x.2)
+        val c = b.1
+        val d = b.2
+    in
+        if (bg d a) then (c,(d,a)) 	
+        else if (bg c a) then (c,(a,d))
+        else x 
+    end
+  val sort4 = fn x =>
+    let val a = x.1
+        val b = sort3 (x.2)
+        val c = b.1
+    in
+        if (bg c a) then (c, sort3 (a,b.2))
+        else (a,b) 
+    end 
+  val print2 = fn x => 				
+    let val a = x.1 
+        val b = x.2
+    in
+        write a; write b
+    end
+  val print3 = fn x => 
+      let val p = x.1
+          val q = x.2 
+      in 
+          write (x.1); print2 (x.2)
+      end  
+  val print4 = fn x =>
+      let val p = x.1
+          val q = x.2
+      in write p; print3 (x.2) end
 in
-  (I 1, I true);
-  fst (1, true) + fst (2, "2015 FALL 4190.310") - 
-  const 1 + const true + const "programming language"
-end
+  print4 data; write "sort";
+  print4 (sort4 data) 
+end 
 
-(* Result : int *)
+
+(* result : int *)
+
+
