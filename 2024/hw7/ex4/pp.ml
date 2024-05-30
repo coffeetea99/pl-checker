@@ -1,7 +1,7 @@
 (*
- * SNU 4190.310 Programming Languages 
+ * SNU 4190.310 Programming Languages
  *
- * M pretty printer 
+ * M pretty printer
  *)
 
 open M.M
