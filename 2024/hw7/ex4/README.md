@@ -1,14 +1,14 @@
-# HW7-3: M Interpreter
-## How to use
-1. 구현한 `simple_checker.ml` 을 복사하거나 뼈대코드 `simple_checker.ml.orig`을 `simple_checker.ml`로 바꾼 후 구현합니다.
+# HW7-4: LowFat M
+1. 구현한 `simple_checker.ml`을 복사하거나 뼈대코드 `simple_checker.orig.ml`을 `simple_checker.ml`로 바꾼 후 구현합니다.
 2. `./check` 명령어를 통해 테스트케이스를 실행합니다.
 
-- `examples/test<num>.m`   : 테스트케이스
-- `examples/test<num>.in`  : (입력이 필요한 경우만) 입력
-- `examples/test<num>.ans` : 정답
-- `examples/test<num>.out` : 출력
+- `examples/<test>.m`   : 테스트케이스
+- `examples/<test>.ans` : 정답
+- `examples/<test>.out` : 내 출력
 
 ---
+
+> SNU 4190.310 Programming Languages
 
 # M Type Checker
 
@@ -53,5 +53,5 @@ m.ml에 M의 문법 및 타입, 실행기, 타입검사기, 문법구조 출력 
 이승중 <sjlee@ropas.snu.ac.kr>
 최재승 <jschoi@ropas.snu.ac.kr>
 이동권 <dklee@ropas.snu.ac.kr>
-이동권,배요한 <dklee, yhbae@ropas.snu.ac.kr>
+이동권 <yhbae@ropas.snu.ac.kr>
 이재호 <jhlee@ropas.snu.ac.kr>

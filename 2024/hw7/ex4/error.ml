@@ -1,8 +1,8 @@
 (*
-* SNU 4190.310 Programming Languages
-*
-* Errors and handlers
-*)
+ * SNU 4190.310 Programming Languages
+ *
+ * Errors and handlers
+ *)
 
 exception Lex_err of string * int
 
