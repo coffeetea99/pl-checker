@@ -8,4 +8,4 @@ end
 end
 end
 
-  (* result : loc ((bool , bool)) *)
+(* result : Loc(bool,bool) *)
