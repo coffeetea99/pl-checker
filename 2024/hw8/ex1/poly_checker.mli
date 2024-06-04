@@ -1,5 +1,5 @@
 (*
- * SNU 4190.310 Programming Languages 2017 Fall
+ * SNU 4190.310 Programming Languages
  * Type Checker Interface File
  *)
 
