@@ -56,6 +56,6 @@ m.ml에 M의 문법 및 타입, 실행기, 타입검사기, 문법구조 출력 
 이승중 <sjlee@ropas.snu.ac.kr>
 최재승 <jschoi@ropas.snu.ac.kr>
 이동권 <dklee@ropas.snu.ac.kr>
-배요한 <yhbae@ropas.snu.ac.kr>>
+배요한 <yhbae@ropas.snu.ac.kr>
 이재호 <jhlee@ropas.snu.ac.kr>
 
